@@ -17,10 +17,12 @@ const handler = {
             const resp = await Account.create({
                 userId:id,
                 agency:"2000-0",
-                account:string
+                account:string,
+                balance:0
             })
+            return h.response().code(201)
         } catch (error) {
-            
+            return h.response().code(500)
         }
     },
     async deleteAccount(request, h) {
@@ -29,7 +31,7 @@ const handler = {
             await Account.destroy({where:{userId:id}})
             return h.response().code(204)
         } catch (error) {
-            
+            return h.response().code(500)
         }
     }
 }

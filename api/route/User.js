@@ -35,6 +35,11 @@ const Routes = [
         handler:(request, h) => ContactHandler.getContacts(request, h)
     },
     {
+        method:"GET",
+        path:"/users/{id}/transfers-history",
+        handler:(request, h) => TransferHandler.getTransfers(request, h)
+    },
+    {
         method:"PUT",
         path:"/users/{id}",
         handler:(request, h) => UserHandler.putUser(request, h)

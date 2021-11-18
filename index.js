@@ -8,7 +8,10 @@ connection.authenticate()
 
 const server = hapi.server({
     host:"localhost",
-    port:3000
+    port:3000,
+    routes:{
+        cors:true
+    }
 })
 
 server.route(UserRoute)

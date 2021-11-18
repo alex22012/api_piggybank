@@ -4,7 +4,8 @@ const connection = require("../connection")
 const Account = connection.define("accounts", {
     userId:Sequelize.INTEGER,
     agency:Sequelize.STRING,
-    account:Sequelize.STRING
+    account:Sequelize.STRING,
+    balance:Sequelize.REAL
 })
 
 Account.sync({force:false})
